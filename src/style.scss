@@ -3,3 +3,9 @@
 
 //style error emssage
 @use "./404.scss" as *;
+
+//style the navbar
+@use "./nav.scss" as *;
+
+//Styling the landing page
+@use "./landing.scss" as *;

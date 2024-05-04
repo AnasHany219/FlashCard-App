@@ -1,0 +1,26 @@
+// Import variables from another SCSS file
+@use "./variables.scss" as *;
+
+// Styling for the landing container
+.landing.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+
+  // Styles for the landing header
+  .landing-header {
+    color: white;
+    font-size: 4rem;
+    margin-bottom: 2rem;
+  }
+
+  // Styles for sign-in and sign-up buttons
+  .sign-in-btn,
+  .sign-up-btn {
+    padding: 1rem 3rem;
+    margin-right: 1rem;
+  }
+}
