@@ -1,0 +1,20 @@
+@use "./variables.scss" as *;
+@use "./general.scss" as *;
+
+//style error emssage
+@use "./404.scss" as *;
+
+//style the navbar
+@use "./nav.scss" as *;
+
+//Styling the landing page
+@use "./landing.scss" as *;
+
+//styling signup page
+@use "./forms.scss" as *;
+
+//styling overview page
+@use "./overview.scss" as *;
+
+//styling study cards page
+@use "./cards.scss" as *;

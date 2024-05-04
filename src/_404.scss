@@ -1,0 +1,33 @@
+// Import variables from another SCSS file
+@use "./variables.scss" as *;
+
+// Styling for the error container
+.error.container {
+  height: 100%;
+  width: 100%;
+
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  gap: 2rem;
+
+  // Styles for the "not found" page text
+  .not-found-page {
+    font-size: 4em;
+  }
+
+  // Styles for the error video
+  .err-vid {
+    width: 400px;
+    justify-self: center;
+  }
+}
+
+// Styles for the error message
+.errmessg {
+  color: $light-red;
+  font-size: 25px;
+  font-weight: bold;
+  justify-self: center;
+}
