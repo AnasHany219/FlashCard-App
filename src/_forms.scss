@@ -1,0 +1,56 @@
+// Import variables from another SCSS file
+@use "./variables.scss" as *;
+
+// Styling for sign-up form, sign-in form, and create new deck form
+.sing-up-form,
+.sing-in-form,
+.create-new-deck-form {
+  background-color: $primary-color;
+  width: 500px;
+  padding: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  // Styles for home button
+  .home-btn {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  // Styles for form wrappers
+  .sing-up-form-wrapper,
+  .create-new-form-wrapper {
+    display: grid;
+    gap: 1rem;
+  }
+
+  // Styles for input fields
+  .input-field {
+    padding: 1rem 2rem;
+    border: 0;
+    outline: 0;
+    border: 1px solid $secondary-color;
+    border-radius: 5px;
+    font-size: 20px;
+  }
+
+  // Styles for sign-up button and add card button
+  .singup-btn,
+  .add-card-btn {
+    margin-top: 3rem;
+  }
+
+  // Styles for error message
+  .errmessg {
+    color: $light-red;
+    font-size: 25px;
+    font-weight: bold;
+    justify-self: center;
+  }
+}
