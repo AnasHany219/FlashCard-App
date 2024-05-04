@@ -1,0 +1,56 @@
+// Import variables from another SCSS file
+@use "./variables.scss" as *;
+
+// Styling for the navigation container
+.container.nav {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $primary-color-dark;
+
+  // Styles for the app logo
+  .app-logo {
+    h1 {
+      font-size: 40px;
+      text-align: center;
+      margin-left: 2rem;
+    }
+  }
+
+  // Styles for unordered list
+  ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    // Styles for list items and anchor elements
+    li a {
+      font-size: 25px;
+    }
+  }
+
+  // Media query for screens up to 768px wide
+  @media screen and (max-width: 768px) {
+    width: 500px;
+    background-color: red;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    // Styles for app logo in smaller screens
+    .app-logo {
+      justify-self: center;
+      align-items: center;
+      h1 {
+        font-size: 20px;
+      }
+    }
+
+    // Styles for anchor elements in list items for smaller screens
+    li a {
+      font-size: 20px !important;
+    }
+  }
+}
