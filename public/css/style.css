@@ -12,6 +12,7 @@ body {
 
 .btn {
   border-radius: 15px;
+  padding: 15px 20px;
   display: inline-block;
   padding: 10px 20px;
   font-size: 16px;
@@ -72,6 +73,12 @@ h4 {
   width: 400px;
   justify-self: center;
 }
+.error.container .status-wrapper {
+  text-align: center;
+}
+.error.container .status-wrapper h1 {
+  margin-bottom: 1rem;
+}
 
 .errmessg {
   color: #e74c3c;
@@ -81,12 +88,12 @@ h4 {
 }
 
 .container.nav {
-  width: 100%;
-  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   background-color: #27ae60;
+  padding: 10px;
 }
 .container.nav .app-logo h1 {
   font-size: 40px;
@@ -144,14 +151,14 @@ h4 {
 .sing-in-form,
 .create-new-deck-form {
   background-color: #2ecc71;
-  width: 500px;
-  padding: 2rem;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  padding: 2rem;
 }
 .sing-up-form .home-btn,
 .sing-in-form .home-btn,
@@ -204,8 +211,8 @@ h4 {
   padding: 2rem;
   display: grid;
   justify-content: center;
-  align-content: start;
   gap: 1rem;
+  align-content: start;
 }
 .overview.container .create-deck-btn,
 .overview.container .logout-btn {
@@ -235,7 +242,7 @@ h4 {
   font-size: 1.25rem;
 }
 .overview.container .empty-overview-messg {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   margin-top: 2rem;
 }
 @media screen and (max-width: 768px) {
@@ -283,21 +290,21 @@ h4 {
   text-align: center;
 }
 .card .card-front {
-  color: white;
-  font-size: 24px;
   background-color: #2980b9;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.card .card-back {
   color: white;
   font-size: 24px;
+}
+.card .card-back {
   background-color: #e74c3c;
   transform: rotateY(180deg);
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
+  font-size: 24px;
 }
 .card .flipped {
   transform: rotateY(180deg);
@@ -319,10 +326,10 @@ h4 {
   margin: 2rem auto;
 }
 .cards-container .card-wrapper {
-  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem;
 }
 .cards-container .card-wrapper .card-data {
   display: flex;
