@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+  <%- include('./partials/head.ejs')%>
   <body>
+    <%- include('./partials/nav.ejs',{userId}) %>
     <div class="create-new-deck-form container">
-      <form action="" method="POST" class="create-new-form-wrapper">
-        <input class="input-field card-front" type="text" name="cardFront" id="cardFront" minlength="1" maxlength="20" required placeholder="">
-         <input class="input-field card-back" type="text" name="cardBack" id="cardBack" minlength="1" maxlength="20" required placeholder="">
+      <form action="<%=newCardURL%>" method="POST" class="create-new-form-wrapper">
+        <input class="input-field card-front" type="text" name="cardFront" id="cardFront" minlength="1" maxlength="20" required placeholder="Front 📄">
+         <input class="input-field card-back" type="text" name="cardBack" id="cardBack" minlength="1" maxlength="20" required placeholder="Back 🔙">
          <!-- <p class="errmessg">something will be here soon 👀</p> -->
          <button class="btn btn-secondary add-card-btn">Add Card ⏬</button>
       </form>
     </div>
+    
   </body>
 </html>

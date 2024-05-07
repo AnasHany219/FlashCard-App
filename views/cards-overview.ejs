@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+  <%- include('./partials/head.ejs')%>
   <body>
+   <%- include('./partials/nav.ejs',{userId}) %>
    <div class="cards-container">
+    <% if (cards.length > 0) { %>
+     
+    <% cards.forEach(card => { %>
+     
     <div class="card-wrapper">
     <div class="card-data">
          <div class="card-front">
-          <h3></h3>
+          <h3><%= card.cardFront %></h3>
          </div>
           <div class="card-back">
-            <h3></h3>
+            <h3><%= card.cardBack %></h3>
           </div>
     </div>
     <div class="card-controlers">
-        <a  class="delete-card-lnk"data-userId=""data-cardId =""data-deckId="">
+        <a  class="delete-card-lnk" data-userId = "<%=userId%>"  data-cardId = "<%=card._id%>" data-deckId = "<%=deckId%>">
         <img class="delet-card" src="/imgs/delete.png" alt="trashCan img" class="delete-img" >
       </a>
-       <a  href="" class="edit-card-lnk" >
+       <a  href="/overview/<%= userId%>/<%= deckId %>/<%= card._id %>/edit-card" class="edit-card-lnk" >
         <img class="edit-card" src="/imgs/edit.png" alt="trashCan img" class="delete-img" >
       </a>
     </div>
     </div>
+    <% }) %>
+      <% }else{ %>
         <div class="cards-container">
           <div class="card-wrapper">
             <div class="card-data">
@@ -32,6 +40,7 @@
             </div>
           </div>
         </div>
+        <% } %>
    </div>
    <script src="/scripts/cards-overview.js" ></script>
   </body>

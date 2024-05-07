@@ -1,37 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+  <%- include('./partials/head.ejs')%>
   <body>
     <div class="sing-in-form container">
-      <a href="/overview/home" class="btn btn-secondary home-btn">Home 🏠</a>
-      <form
-        action="/accounts/sign-in"
-        method="POST"
-        class="sing-up-form-wrapper"
-      >
-        <input
-          class="input-field singin-username"
-          type="text"
-          name="userName"
-          id="userName"
-          minlength="3"
-          maxlength="20"
-          required
-          placeholder="Type User Name..."
-        />
-        <input
-          class="input-field singin-password"
-          type="password"
-          name="password"
-          id="password"
-          minlength="3"
-          maxlength="20"
-          required
-          placeholder="Type Password..."
-        />
-        <!-- <p class="errmessg">something will be here soon 👀</p> -->
-        <button class="btn btn-secondary singin-btn">
-          Let The Fun Begin 🆕
-        </button>
+        <a href="/overview/home" class="btn btn-secondary home-btn">Home 🏠</a>
+      <form action="/accounts/sign-in" method="POST" class="sing-up-form-wrapper">
+        <input class="input-field singin-username" type="text" name="userName" id="userName" minlength="3" maxlength="40" required placeholder="Type User Name...">
+         <input class="input-field singin-password" type="password" name="password" id="password" minlength="3" maxlength="40" required placeholder="Type Password...">
+         <!-- <p class="errmessg">something will be here soon 👀</p> -->
+         <button class="btn btn-secondary singin-btn">Let The Fun Begin 🆕</button>
       </form>
     </div>
   </body>

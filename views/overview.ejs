@@ -1,20 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+  <%- include('./partials/head.ejs')%>
   <body>
+   <%- include('./partials/nav.ejs',{userId}) %>
    <div class="overview container">
-    <a href="" class="btn btn-secondary create-deck-btn">New Deck 🆕</a>
+    <a href="/overview/<%=userId%>/create-new-deck" class="btn btn-secondary create-deck-btn">New Deck 🆕</a>
+   <% if (decks.length === 0) { %>
   <h3 class="empty-overview-messg">There are no decks yet. Start by creating a new one 🏃</h3>
+<% } else { %>
+  <% decks.forEach(deck => { %>
     <div class="deck-content-container">
-      <span class="deck-name deck-info"></span>
-      <span class="creation-date deck-info"></span>
-      <span class="cards-num deck-info"></span>
-      <a href="" class="deck-link deck-info clickable">Study Deck</a>
-      <a href="" class="deck-link deck-info">Add New Card</a>
-      <a href="" class="deck-link deck-info">List Deck Cards</a>
-      <a class="delete-deck-btn" data-userId = ""  data-deckId = "">
+      <span class="deck-name deck-info"><%= deck.deckName %></span>
+      <%
+      const date = new Date(Date.parse(deck.createdAt));
+      const formattedDate = date.toLocaleDateString('en-UK', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      });
+      %>
+      <span class="creation-date deck-info"><%=  formattedDate  %></span>
+      <span class="cards-num deck-info"><%= deck.deckCardsCount %></span>
+      <a href="/overview/<%=userId%>/<%=deck._id%>/study-cards" class="deck-link deck-info clickable">Study Deck</a>
+      <a href="/overview/<%=userId%>/<%=deck._id%>/add-new-card" class="deck-link deck-info">Add New Card</a>
+      <a href="/overview/<%=userId%>/<%=deck._id%>/list-deck-cards" class="deck-link deck-info">List Deck Cards</a>
+      <a class="delete-deck-btn" data-userId = "<%=userId%>"  data-deckId = "<%=deck._id%>">
         <img src="/imgs/delete.png" alt="trashCan img" class="delete-img" >
       </a>
     </div>
+  <% }) %>
+<% } %>
+  
 </div>
     </div>
     <script src="/scripts/overview.js" ></script>

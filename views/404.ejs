@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+  <%- include('./partials/head.ejs')%>
   <body>
     <div class="error container">
-      <h1 class="not-found-page">Something Went Wrong 🔥</h1>
-      <!-- <video controls autoplay  class="err-vid">
+        <h1 class="not-found-page">Something Went Wrong 🔥</h1>
+       <div class="status-wrapper">
+         <h1>Error Status Code: <%= statusCode %></h1>
+        <h1>Error Status: <%= status %></h1>
+        <h1>Error Message: <%= message %></h1>
+       </div>
+        <!-- <video controls autoplay  class="err-vid">
          <source src="/videos/erro-vid.mp4" type="video/mp4">
          Your browser does not support the video tag.
        </video> -->
