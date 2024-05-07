@@ -1,15 +1,21 @@
 {
-  "name": "flashcard-app",
+  "name": "flashcardsapp",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass -w src/:public/css --style expanded --no-source-map && postcss dist/css/*.css --output dist/css --no-map --config"
+    "start": "nodemon server.js",
+    "sass": "sass -w 'src/':public/css --style expanded --no-source-map && postcss dist/css/*.css --output dist/css --no-map --config"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Islam Sobhy",
   "license": "ISC",
-  "devDependencies": {
-    "sass": "^1.76.0"
+  "description": "",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.3.2",
+    "sass": "^1.75.0"
   }
 }
