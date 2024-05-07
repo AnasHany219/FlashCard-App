@@ -29,7 +29,7 @@ const getUserDecks = catchAsync(async (req, res) => {
 
 const renderDeckForm = catchAsync(async (req, res) => {
   const userId = req.params.id;
-  console.log(userId);
+
   const createUsrURL = `/overview${req.url}`;
   res.render("create-new-deck", { createUsrURL, userId });
 });
@@ -52,7 +52,6 @@ const createNewDeck = catchAsync(async (req, res) => {
     { $inc: { decksNumber: 1 } }
   );
   const createUsrURL = `/overview${req.url}`;
-  console.log(createUsrURL);
   res.render("create-new-deck", { createUsrURL, userId });
 });
 
